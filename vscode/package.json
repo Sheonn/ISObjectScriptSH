@@ -1,0 +1,61 @@
+{
+  "contributes": {
+    "languages": [
+      {
+        "id": "isobjectscript",
+        "aliases": [
+          "ISObjectScript"
+        ],
+        "extensions": [
+          ".cls",
+          ".mac",
+          ".int",
+          ".inc"
+        ]
+      },
+      {
+        "id": "isobjectscript.csp",
+        "aliases": [
+          "ISObjectScript CSP"
+        ],
+        "extensions": [
+          ".csp"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "isobjectscript",
+        "scopeName": "source.isobjectscript",
+        "path": "syntaxes/isobjectscript.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.inline.sql": "source.sql",
+          "meta.embedded.inline.xml": "text.xml",
+          "meta.embedded.inline.html": "text.html.basic",
+          "meta.embedded.inline.js": "source.js"
+        }
+      },
+      {
+        "language": "isobjectscript.csp",
+        "scopeName": "source.isobjectscript.csp",
+        "path": "syntaxes/isobjectscript.csp.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.inline.sql": "source.sql",
+          "meta.embedded.inline.xml": "text.xml",
+          "meta.embedded.inline.js": "source.js",
+          "meta.embedded.inline.objectscript-class": "source.isobjectscript"
+        }
+      },
+      {
+        "scopeName": "source.isobjectscript.injection",
+        "path": "./syntaxes/isobjectscript.injection.tmLanguage.json",
+        "injectTo": [
+          "source.js",
+          "text.html.basic",
+          "source.objectscript.csp",
+          "source.objectscript"
+        ]
+      }
+    ]
+  }
+}
